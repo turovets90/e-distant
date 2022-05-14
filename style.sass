@@ -1,0 +1,515 @@
+/*!
+  Theme Name: e-distant
+  Theme URI: http://underscores.me/
+  Author: Underscores.me
+  Author URI: http://underscores.me/
+  Description: Description
+  Version: 1.0.0
+  Tested up to: 5.4
+  Requires PHP: 5.6
+  License: GNU General Public License v2 or later
+  License URI: LICENSE
+  Text Domain: e-distant
+  Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+  This theme, like WordPress, is licensed under the GPL.
+  Use it to make something cool, have fun, and share what you've learned.
+
+  e-distant is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+  Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+  Normalizing styles have been helped along thanks to the fine work of
+  Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
+
+//@import "css/bootstrap"
+//@import "css/fancybox"
+@import "css/slick-less"
+
+
+@font-face 
+  font-family: 'Gilroy SemiBold'
+  src: url('./fonts/Gilroy-SemiBold.eot')
+  src: local('Gilroy SemiBold'), local('Gilroy-SemiBold'),url('./fonts/Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-SemiBold.woff') format('woff'), url('./fonts/Gilroy-SemiBold.ttf') format('truetype')
+  font-weight: 600
+  font-style: normal
+$g_600: 'Gilroy SemiBold'
+
+
+@font-face
+  font-family: 'Gilroy Medium'
+  src: url('./fonts/Gilroy-Medium.eot')
+  src: local('Gilroy Medium'), local('Gilroy-Medium'), url('./fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Medium.woff') format('woff'), url('./fonts/Gilroy-Medium.ttf') format('truetype')
+  font-weight: 500
+  font-style: normal
+$g_500: 'Gilroy Medium'
+
+
+@font-face
+  font-family: 'Gilroy Regular'
+  src: url('./fonts/Gilroy-Regular.eot')
+  src: local('Gilroy Regular'), local('Gilroy-Regular'), url('./fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Regular.woff') format('woff'), url('./fonts/Gilroy-Regular.ttf') format('truetype')
+  font-weight: 400
+  font-style: normal
+$g_400: 'Gilroy Regular'
+
+
+
+@font-face
+  font-family: 'Gilroy Light'
+  src: url('./fonts/Gilroy-Light.eot')
+  src: local('Gilroy Light'), local('Gilroy-Regular'), url('./fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Light.woff') format('woff'), url('./fonts/Gilroy-Light.ttf') format('truetype')
+  font-weight: 400
+  font-style: normal
+$g_300: 'Gilroy Light'
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap')
+$open_sans: 'Open Sans', sans-serif
+
+
+
+=b_a()
+  content: ''
+  position: absolute
+
+=m_a()
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+
+=flex()
+  display: flex
+  display: -webkit-flex
+
+=j-center()
+  justify-content: center
+  -webkit-justify-content: center
+
+=j-beetween()
+  justify-content: space-between
+  -webkit-justify-content: space-between
+
+=j-space-around()
+  justify-content: space-around
+  -webkit-justify-content: space-around
+
+=j-end()
+  justify-content: flex-end
+  -webkit-justify-content: flex-end
+
+=j-start()
+  justify-content: flex-start
+  -webkit-justify-content: flex-start
+
+=ai-center()
+  align-items: center
+  -webkit-align-items: center
+
+=ai-start()
+  align-items: flex-start
+  -webkit-align-items: flex-start
+
+=ai-end()
+  align-items: flex-end
+  -webkit-align-items: flex-end
+
+=as-center()
+  align-self: center
+  -webkit-align-self: center
+
+=as-end()
+  align-self: flex-end
+  -webkit-align-self: flex-end
+
+=as-start()
+  align-self: flex-start
+  -webkit-align-self: flex-start
+
+=wrap()
+  flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+
+=col()
+  flex-direction: column
+  -webkit-flex-direction: column
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+=box-shadow($box-shadow)
+  -webkit-box-shadow: $box-shadow
+  -moz-box-shadow: $box-shadow
+  box-shadow: $box-shadow
+
+=transform($transform)
+  transform: $transform
+  -webkit-transform: $transform
+  -moz-transform: $transform
+  -ms-transform: $transform
+  -o-transform: $transform
+
+=transition($transition_default)
+  transition: $transition_default
+  -webkit-transition: $transition_default
+  -moz-transition: $transition_default
+  -o-transition: $transition_default
+
+
+=animation($transition_default)
+  animation: $transition_default
+  -webkit-animation: $transition_default
+  -moz-animation: $transition_default
+  -o-animation: $transition_default
+
+
+
+$transition_default: .3s linear
+$black: #323232
+$red: #D82F2F
+
+
+a, button
+  +transition($transition_default)
+
+a
+  text-decoration: underline
+  &:hover, &:focus
+    text-decoration: none
+
+button, input, .form_control
+  outline: none
+
+.form_control
+  &:hover, &:focus
+    box-shadow: none
+    outline: none
+
+button
+  cursor: pointer
+  &:hover, &:focus
+    +box-shadow(none)
+    outline: none
+
+
+img, video
+  max-width: 100%
+*
+  outline: none
+
+*, *::before, *::after
+  box-sizing: border-box
+
+ul
+  padding: 0
+  margin: 0
+  li
+    list-style: none
+
+
+*
+  outline: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  &::-webkit-scrollbar
+    -webkit-appearance: none
+    width: 0
+  &::-webkit-scrollbar:vertical
+    width: 6px
+    background: #c6c8ca
+  &::-webkit-scrollbar-thumb
+    +border-radius(4px)
+    background: red
+
+
+body
+  background: #fff
+  padding: 0
+  margin: 0
+  color: #323232
+  font-size: 18px
+  line-height: 25px
+  font-family: $open_sans
+  font-weight: 400
+
+
+.container
+  width: 100%
+  max-width: 1450px
+  margin: auto
+  padding-left: 15px
+  padding-right: 15px
+
+
+
+.h_row
+  +flex
+  +wrap
+
+
+
+header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background: #fff
+  z-index: 999
+  font-size: 16px
+
+
+.logo
+  +box-shadow(0px 0px 25px rgba(50, 50, 50, 0.05))
+  background: #fff
+  //width: 100%
+  max-width: 220px
+  //height: 184px
+  text-align: center
+  margin-right: 25px
+  margin-bottom: -70px
+  a
+    display: inline-block
+    text-align: center
+    padding: 15px 40px
+    text-decoration: none
+    color: $black
+    &:hover, &:focus
+      text-decoration: none
+    img
+      margin-bottom: 3px
+    .logo_txt
+      display: block
+      text-align: center
+      font-size: 14px
+      text-transform: uppercase
+
+
+
+
+.main_menu
+  width: calc(100% - 245px)
+  +flex
+  +j-beetween
+  +ai-center
+
+  .btn_default
+    display: none
+  .menu
+    @media (min-width: 1201px)
+      display: none
+
+  .h_right
+    width: 30%
+    +flex
+    +j-end
+
+  .dropdown
+    position: relative
+    +flex
+    +wrap
+    +ai-center
+    padding-bottom: 10px
+    margin-right: 10px
+    &.act
+      .dropdown_menu
+        display: block
+      .dropdown_toggler
+        &:before
+          +transform(rotate(-180deg))
+
+    .dropdown_toggler
+      width: 35px
+      height: 35px
+      position: relative
+      cursor: pointer
+      &:before
+        +b_a
+        left: 0
+        right: 0
+        top: 8px
+        margin: auto
+        width: 0
+        height: 0
+        border-top: 5px solid $black
+        border-right: 5px solid transparent
+        border-left: 5px solid transparent
+        +transition($transition_default)
+
+    .phone
+      a
+        display: block
+        font-size: 20px
+        color: $black
+        font-family: $g_500
+        text-decoration: none
+        line-height: 1.2
+        &:hover, &:focus
+          text-decoration: none
+
+
+      span
+        display: block
+        font-size: 12px
+        font-family: $g_300
+        color: $black
+        line-height: 1.2
+
+    .dropdown_menu
+      position: absolute
+      display: none
+      top: 100%
+      left: 0
+      background: #fff
+      z-index: 999
+      padding: 20px
+      +box-shadow(0px 2px 20px rgba(50, 50, 50, 0.1))
+      ul
+        li
+          margin-bottom: 23px
+          &:last-child
+            margin-bottom: 0
+          a
+            font-size: 20px
+            color: $black
+            text-decoration: none
+            line-height: 24px
+            font-family: $g_500
+            white-space: nowrap
+
+
+  .soc_menu
+    +flex
+    +ai-center
+    li
+      + li
+        margin-left: 25px
+
+
+  .h_contacts
+    +flex
+    +wrap
+    +j-beetween
+    width: 70%
+    margin-bottom: 25px
+    li
+      font-family: $g_400
+      font-size: 16px
+      color: $black
+      a
+        color: $black
+        text-decoration: underline
+        &:hover, &:focus
+          text-decoration: none
+        &.email
+          text-decoration: none
+          &:hover, &:focus
+            text-decoration: underline
+
+
+.work
+  text-decoration: underline
+
+.location, .email
+  position: relative
+  padding-left: 40px
+  &:before
+    +b_a
+    top: 0
+    left: 0
+.location
+  &:before
+    width: 14px
+    height: 20px
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='20' viewBox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z' fill='%236C6C6C'/%3e%3c/svg%3e ")
+
+.email
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: underline
+  &:before
+    width: 20px
+    height: 16px
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M20 0H0V16H20V0ZM18 4L10 9L2 4V2L10 7L18 2V4Z' fill='%236C6C6C'/%3e%3c/svg%3e ")
+
+
+
+.d_flex
+  +flex
+
+
+nav
+  background: linear-gradient(180deg, #FCDB9E -15%, #FAD99D 11.69%, #E8C38C 57.27%, #DDB887 92.69%, #E7C289 97.94%, #D7B183 100.71%)
+  padding-left: 245px
+  .container
+    padding-left: 0
+  .d_flex
+    +j-beetween
+
+.menu
+  +flex
+  +ai-center
+  li
+    margin-right: 42px
+    position: relative
+    &.sale
+      a
+        position: relative
+        &:before
+          content: "%"
+          color: #fff
+          font-family: $g_600
+          width: 20px
+          height: 20px
+          +flex
+          +ai-center
+          +j-center
+          background: $red
+          position: absolute
+          right: -15px
+          bottom: 100%
+
+
+    a
+      font-family: $g_500
+      font-size: 16px
+      color: $black
+      text-decoration: none
+      &:hover, &:focus
+        text-decoration: none
+        color: $red
+
+
+.btn_default
+  width: 100%
+  max-width: 253px
+  height: 70px
+  background: $red
+  color: #fff
+  text-transform: uppercase
+  font-size: 16px
+  font-family: $g_600
+  +flex
+  +ai-center
+  +j-center
+  padding: 10px
+  text-align: center
+  text-decoration: none
+  border: 0
+
+  &:hover
+    text-decoration: none
+    background: #C52121
+    color: #fff
+  &:focus
+    background: #D82F2F
+    color: rgba(255, 255, 255, 0.7)
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+section.first_screen
+    .first_screen__body
+        .container.content
+            div.text_center
+                h1 Yukon Gold Online Casino Review
+                .text.mw_740 Yukon Gold Casino is a popular Canadian gambling website operating since the early 2000s. We welcome you to our guide, where you can find more about Yukon Gold games, bonuses, and the casino itself.
+                .btn_group
+                    a.button(href="#")
+                        span BONUSES
+                    a.button.btn_green(href="#")
+                        span GAMES
+        .first_screen__images
+            #scene
+                div(data-depth="0.10")
+                    .image.image_cover(style="background-image:url(img/img_1_cover.png")
+                img.image.image_gold1(data-depth="0.15" src="img/image_gold1.png")
+                img.image.image_people(data-depth="-0.15" src="img/image_people.png")
+                img.image.image_gold2(data-depth="0.20" src="img/image_gold2.png")
+                img.image.image_gold2(data-depth="0.20" src="img/image_gold2.png")
+
+
+section.top_games
+    .container
+        .text_center
+            img.section__top_img(src="img/section_top_img.svg")
+        .h2 Top Games in Canada
+        .sub_title Yukon Gold Casino is a popular Canadian gambling website operating since the early 2000s. We welcome you to our guide, where you can find more about Yukon Gold games, bonuses, and the casino itself.
+        -var top_games=['','Video Poker','Roulette','Slots','Blackjack'];
+        -var tp_desc=["","Are you ready to collect winning combinations? Yukon Gold has many high-quality video poker games. Check it out!","Roulette is a symbol of any casino. Play this gorgeous casino game at Yukon Gold Casino online. Lorem Ipsum has been the industry's","Hit the jackpot playing Yukon Gold slot machines! There are a number of amazing online slots offering scatters, wilds, bonus rounds.","Get all the excitement of the best Blackjack games at Yukon Gold Casino. There are several versions to play online. "];
+        .top_games__list.row
+            -for(var i=1;i<=4;i++)
+                .column.col_3
+                    .top_games__list_item
+                        picture
+                            img(src="img/top-games/"+i+".png")
+                        .item_title=top_games[i]
+                        .item_desc=tp_desc[i]
+                        a.go(href="#")
+
+                            span Go
+
+        .section__bottom_img
+
+
+section.popular_games
+    .container
+        .h2 Most Popular Games
+        .sub_title Yukon Gold Casino is a popular Canadian gambling website operating since the early 2000s. We welcome you to our guide, where you can find more about Yukon Gold games, bonuses, and the casino itself.
+
+        .popular_games__list.row
+            -for(var p=1;p<=10;p++)
+                .column.col_2
+                    .popular_games__list_item(style="background-image:url(img/popular_games_img.png)")
+                        .popular_games__list_item_content
+                            .title Arctic Valor
+                            .desc Are you ready to collect winning combinations? Yukon Gold has many high-quality video poker games.
+                            a.play_now(href="#") • Play Now •
+        .flex_center
+            a.button(href="#")
+                span ALL GAMES
+
+
+section.about_company
+    .container
+        .text_center
+            img.section__top_img(src="img/section_top_img.svg")
+        .h2 About Yukon Gold Casino Canada
+        .sub_title Yukon Gold online casino is a well-known gaming site in Canada. Powered by Microgaming, it provides top-notch service for its customers. Canadian players appreciate Yukon Casino as it features many fascinating casino games and offers generous welcome bonuses. You can find out more about its promotions and loyalty program in our reviews.
+        .flex_center
+            a.button.btn_green(href="#")
+                span ALL GAMES
+
+
+section.reviews
+    .container
+        .h2 Customer Reviews
+        .reviews_slider
+            -for(var r=1;r<=6;r++)
+                .column.col_3
+                    .reviews_slider__item
+                        picture
+                            img(src="img/review_author.png")
+                        img.review_star(src="img/star.svg")
+
+                        .review_author Jose Kilgore
+                        .review_text Thanks a lot for such a great service. Except for the reviews, you have a wide range of interesting online games. There are some new ones I haven't played before
+
+        .section__bottom_img
+
+-var faqs_title=['','Is Yukon Gold Casino Reliable And Safe?','What Games Can I Play At Yukon Gold?','What Are Casino Bonuses And Bonus Codes?','What is a Free Spins Bonus?'];
+-var faqs_desc=['','Yes. Licensed by the Gaming Commission, Yukon Gold is a trusted gambling website. Today it is one of the leading online casinos in Canada.','This online casino offers a wide range of games, including a variety of slot machines and table games. Besides slots, you can try your luck at blackjack, roulette, poker, and more/ Know more in our review. ','These are special offers from the casino. To reward a loyal player or attract a new customer, a casino can provide a promotion. Casino bonuses bring players free spins and extra money to play.','It is a casino bonus that brings free spins to play slots for free. To find out which games you can play with the bonus, read the information in the bonus terms.'];
+section.faqs
+    .container
+        .h2 Yukon Gold FAQs
+        .faqs_list.row
+            -for(var f=1;f<=4;f++)
+                .column.col_6
+                    .faqs_list__item
+                        picture
+                            img(src="img/faqs/"+f+".svg")
+                        .faqs_list__item_text
+                            .title=faqs_title[f]
+                            .desc=faqs_desc[f]
+
+
+
+
+
+
+
+
+
