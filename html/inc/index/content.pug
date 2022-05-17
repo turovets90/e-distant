@@ -1,106 +1,250 @@
-section.first_screen
-    .first_screen__body
-        .container.content
-            div.text_center
-                h1 Yukon Gold Online Casino Review
-                .text.mw_740 Yukon Gold Casino is a popular Canadian gambling website operating since the early 2000s. We welcome you to our guide, where you can find more about Yukon Gold games, bonuses, and the casino itself.
-                .btn_group
-                    a.button(href="#")
-                        span BONUSES
-                    a.button.btn_green(href="#")
-                        span GAMES
-        .first_screen__images
-            #scene
-                div(data-depth="0.10")
-                    .image.image_cover(style="background-image:url(img/img_1_cover.png")
-                img.image.image_gold1(data-depth="0.15" src="img/image_gold1.png")
-                img.image.image_people(data-depth="-0.15" src="img/image_people.png")
-                img.image.image_gold2(data-depth="0.20" src="img/image_gold2.png")
-                img.image.image_gold2(data-depth="0.20" src="img/image_gold2.png")
+//section.first_screen(style="background-image: url("+dir+"bg.png)")
+   .container
+
+       .d_flex
+           .text_block
+               h1 Высшее образование Дистанционно Без выезда за пределы РБ
+               .sub_title Хотите получить бесплатную консультацию и совет от специалиста? Свяжитесь с нами
+           //img.girl(src=dir+"girl.png")
+           .form_block
+               .form_block_title Заполните форму, и мы свяжемся с Вами в ближайшее время
+               form
+                   .c_form
+                       .field
+                            input.form_control(type="text" placeholder="Ваше имя")
+                       .field
+                            input.form_control(type="text" placeholder="Телефон")
+                       .field
+                            input.form_control(type="text" placeholder="E-mail")
+                       .field
+                           .checkbox
+                               input(type="checkbox" id="aggree")
+                               label(for="aggree") Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
+                       .field
+                           button.btn_default(type="submit") Оставить заявку
 
 
-section.top_games
+-var tabs=['БАКАЛАВРИАТ','СПЕЦИАЛИТЕТ','КОЛЛЕДЖ','МАГИСТРАТУРА'];
+section.section_tabs.bg_grey
     .container
-        .text_center
-            img.section__top_img(src="img/section_top_img.svg")
-        .h2 Top Games in Canada
-        .sub_title Yukon Gold Casino is a popular Canadian gambling website operating since the early 2000s. We welcome you to our guide, where you can find more about Yukon Gold games, bonuses, and the casino itself.
-        -var top_games=['','Video Poker','Roulette','Slots','Blackjack'];
-        -var tp_desc=["","Are you ready to collect winning combinations? Yukon Gold has many high-quality video poker games. Check it out!","Roulette is a symbol of any casino. Play this gorgeous casino game at Yukon Gold Casino online. Lorem Ipsum has been the industry's","Hit the jackpot playing Yukon Gold slot machines! There are a number of amazing online slots offering scatters, wilds, bonus rounds.","Get all the excitement of the best Blackjack games at Yukon Gold Casino. There are several versions to play online. "];
-        .top_games__list.row
-            -for(var i=1;i<=4;i++)
-                .column.col_3
-                    .top_games__list_item
+        .section_title Специальности
+        .tabs_block
+            .tabs_nav
+                for tabs_item , index in tabs
+                    .tab_item(class=(index===0)?'active':'')=tabs_item
+            .tabs_content_list
+                -for(var t=0;t<=3;t++)
+                    .tabs_content_item(class=(t===0)?'active':'')
+                        .m_tab_item(class=(t===0)?'':'')=tabs[t]
+                        .tabs_content_body
+                            -for(var g=1;g<=5;g++)
+                                .specialty_group
+                                    if g===1
+                                         .g_title Высшее образование: #{t}
+                                    .specialty_title Менеджмент:
+                                    ul
+                                        if g===2
+                                            -for(var l=1;l<=6;l++)
+                                                li Управление человеческими ресурсами
+                                        else if g===4
+                                            -for (var l = 1; l <= 2; l++)
+                                                li Теория и методика преподавания иностранных языков и культур (англ.+нем./франц.)
+                                        else
+                                            -for (var l = 1; l <= 3; l++)
+                                               li Коммерция
+
+
+section.section_price
+    .container
+        .section_title Стоимость
+        .sub_title Стоимость обучения является неизменной в течение всего периода обучения
+
+        .products_list
+            -for(var p=1;p<=4;p++)
+                .item
+                    .product_item
                         picture
-                            img(src="img/top-games/"+i+".png")
-                        .item_title=top_games[i]
-                        .item_desc=tp_desc[i]
-                        a.go(href="#")
+                            img(src=dir+"product_logo.svg")
+                        .product_title Московский международный университет
+                        .product_price
+                            span.s_title Стоимость:
+                            .price_row
+                                .current_price 26 000 ₽
+                                .old_price 30 000 ₽
+                        .product_equivalent
+                            span.s_title Эквивалент:
+                            p (955 BYN / 1100 BYN за семестр)
+                        a.btn_default(href="#") Перейти на сайт
 
-                            span Go
-
-        .section__bottom_img
 
 
-section.popular_games
+
+section.suggestions
     .container
-        .h2 Most Popular Games
-        .sub_title Yukon Gold Casino is a popular Canadian gambling website operating since the early 2000s. We welcome you to our guide, where you can find more about Yukon Gold games, bonuses, and the casino itself.
 
-        .popular_games__list.row
-            -for(var p=1;p<=10;p++)
-                .column.col_2
-                    .popular_games__list_item(style="background-image:url(img/popular_games_img.png)")
-                        .popular_games__list_item_content
-                            .title Arctic Valor
-                            .desc Are you ready to collect winning combinations? Yukon Gold has many high-quality video poker games.
-                            a.play_now(href="#") • Play Now •
-        .flex_center
-            a.button(href="#")
-                span ALL GAMES
+        .d_flex
+            .left_col
+                img(src=dir+'icon_st.svg')
+                .title Вы можете стать студентом уже сейчас!
+                ul
+                    li <span>Открыт приём документов на очередной поток</span>
+                    li <span>Оформить документы вы можете прямо сейчас</span>
+                    li <span>Начало занятий очередных потоков: <strong>01 октября 2022</strong> <strong>01 июля 2022 (МосАП)</strong> Идёт приём!</span>
+                    li <span>Стоимость обучения сегодня <strong>от 700 бел. руб. за семестр</strong></span>
+
+            .right_col
+                img.union(src=dir+"union.png")
+                img(src=dir+"sale.svg")
+                .title Мы подготовили<br> <span class="text_uppercase">лучшие предложения</span> для вас
+                .suggestions_row
+                    .item
+                        .item_title <strong>-30%</strong> при оформлении документов до 01 июня
+                        .item_desc Оформляйте документы до 01 июня и получайте скидку на обучение до  30%
+                    .item
+                        .item_title <strong>-30%</strong><br> на первую оплату
+                        .item_desc Скидки абитуриентам на первую оплату (ММУ) при оформлении документов до 31 мая – 30%
+                    .item
+                        .item_title <strong>Скидки</strong> при единовременной оплате двух и более семестров
+                        .item_desc Скидки в оплате за обучение для абитуриентов в размере 3000 рос. руб. при единовременной оплате двух и более семестров (МФЮА)
+                    .item
+                        .item_title <strong>-40%</strong> при освоении нескольких образовательных программ
+                        .item_desc Скидки в оплате за обучение для абитуриентов в размере 40% от годовой стоимости обучения при одновременном освоении нескольких образовательных программ (МФЮА)
 
 
-section.about_company
+
+
+
+section.terms.bg_grey
     .container
-        .text_center
-            img.section__top_img(src="img/section_top_img.svg")
-        .h2 About Yukon Gold Casino Canada
-        .sub_title Yukon Gold online casino is a well-known gaming site in Canada. Powered by Microgaming, it provides top-notch service for its customers. Canadian players appreciate Yukon Casino as it features many fascinating casino games and offers generous welcome bonuses. You can find out more about its promotions and loyalty program in our reviews.
-        .flex_center
-            a.button.btn_green(href="#")
-                span ALL GAMES
+        .section_title Сроки обучения
+        .sub_title Сроки заочного (дистанционного) обучения зависят от уровня Вашего базового образования и выбранной Вами ступени подготовки (высшее или среднее специальное образование), а именно:
+        .scroll_block
+            table
+                thead
+                    tr
+                        td(colspan=7) Высшее образование
+                tbody
+                    tr
+                        -for (var td = 1; td <= 7; td++)
+                            if td === 1
+                                td
+                            else if td === 2
+                                td Базовое образование
+                            else if td === 3
+                                td Уровень высшего образования
+                            else if td === 4
+                                td ММУ
+                            else if td === 5
+                                td МосАП
+                            else if td === 6
+                                td МФЮА
+                            else if td === 7
+                                td МЮИ
+                    -for(var tr=1;tr<=5;tr++)
+                        tr
+                            -for(var td=1;td<=7;td++)
+
+                                if td===1
+                                    td #{tr}
+                                else if td===2
+                                    td Среднее специальное, высшее образование
+                                else if td===3
+                                    td бакалавриат
+                                else if td===4
+                                    td 3 года 6 мес.
+                                else if td===5
+                                    td 3 года 6 мес.
+                                else if td===6
+                                    td 3 года 4 мес.
+                                else if td===7
+                                    td -
+
+        .scroll_block
+            table
+                thead
+                    tr
+                        td(colspan=3) Высшее образование
+                tbody
+                    tr
+                        -for (var td = 1; td <= 3; td++)
+                            if td === 1
+                                td
+                            else if td === 2
+                                td Базовое образование
+                            else if td === 3
+                                td Колледж Развития Инновационных Технологий (КРИТ)
+
+                    -for (var tr = 1; tr <= 3; tr++)
+                        tr
+                            -for (var td = 1; td <= 3; td++)
+
+                                if td === 1
+                                    td #{tr}
+                                else if td === 2
+                                    td Среднее общее образование, 11 кл.
+                                else if td === 3
+                                    td от 1 года и 10 месяцев до 3 лет и 10 месяцев в зависимости от программы обучения
 
 
-section.reviews
+
+section.adv
     .container
-        .h2 Customer Reviews
-        .reviews_slider
-            -for(var r=1;r<=6;r++)
-                .column.col_3
-                    .reviews_slider__item
-                        picture
-                            img(src="img/review_author.png")
-                        img.review_star(src="img/star.svg")
+        .section_title Преимущества дистанционного <br>и заочного обучения
 
-                        .review_author Jose Kilgore
-                        .review_text Thanks a lot for such a great service. Except for the reviews, you have a wide range of interesting online games. There are some new ones I haven't played before
+        .adv_row
+            .left_col
+                .title Дистанционное обучение
+                ul.adv_ilst
+                    -for(var adv=1;adv<=10;adv++)
+                        li Весь учебный процесс протекает с использованием Электронной Системы Дистанционного Обучения (ЭСДО).
+            img.adv_img(src=dir+'adv_img.svg')
+            img.adv_img_mobile(src=dir+'adv_img_mobile.svg')
+            .right_col
+                .title Заочное обучение
+                ul.adv_ilst
+                    -for (var adv = 1; adv <= 7; adv++)
+                        li Дистанционное обучение тоже является заочным.
+        button.show_all Показать все
 
-        .section__bottom_img
 
--var faqs_title=['','Is Yukon Gold Casino Reliable And Safe?','What Games Can I Play At Yukon Gold?','What Are Casino Bonuses And Bonus Codes?','What is a Free Spins Bonus?'];
--var faqs_desc=['','Yes. Licensed by the Gaming Commission, Yukon Gold is a trusted gambling website. Today it is one of the leading online casinos in Canada.','This online casino offers a wide range of games, including a variety of slot machines and table games. Besides slots, you can try your luck at blackjack, roulette, poker, and more/ Know more in our review. ','These are special offers from the casino. To reward a loyal player or attract a new customer, a casino can provide a promotion. Casino bonuses bring players free spins and extra money to play.','It is a casino bonus that brings free spins to play slots for free. To find out which games you can play with the bonus, read the information in the bonus terms.'];
-section.faqs
+-var n_serv=['не хотите проходить сложные вступительные процедуры?','не удалось пройти по конкурсу в выбранный вами вуз?','хотите поступить уже сегодня, не дожидаясь 1 сентября?','хотите получать 2 высших образования одновременно?','закончили колледж, училище, техникум?','закончили школу, лицей, гимназию?','уже есть высшее образование, но хотите поменять специальность?','Вы выпускник прошлых лет и не хотите тратить много времени на подготовку к ЦТ?']
+section.need_serv
     .container
-        .h2 Yukon Gold FAQs
-        .faqs_list.row
-            -for(var f=1;f<=4;f++)
-                .column.col_6
-                    .faqs_list__item
-                        picture
-                            img(src="img/faqs/"+f+".svg")
-                        .faqs_list__item_text
-                            .title=faqs_title[f]
-                            .desc=faqs_desc[f]
+        .section_title Вам необходимы <br>наши услуги если:
+        .need_serv
+            for n_item, index in n_serv
+                .item
+                    .item_content
+                        .counter=index+1
+                        .desc=n_item
+
+
+section.contacts
+    .container
+        .d_flex
+            .left_col
+                .section_title Контакты
+                ul.c_list
+                    li
+                        a(href="tel:+375 (44) 709-82-57") +375 (44) 709-82-57
+                    li
+                        a(href="tel:+375 (29) 509-82-57") +375 (29) 509-82-57
+                    li
+                        a(href="tel:+375 (17) 227-99-90") +375 (17) 227-99-90
+                    li.loc г. Минск, ул. Кальварийская, д. 16, офис 239.
+                    li
+                        a.email2(href="mailto:e-distant@e-distant.by") e-distant@e-distant.by
+                    li
+                        a.work(href="#") Время работы
+            .right_col
+                .map
+                    img(src=dir+'image87.png')
+
+
+
+
+
+
 
 
 

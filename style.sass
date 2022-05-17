@@ -27,6 +27,15 @@
 @import "css/slick-less"
 
 
+@font-face
+  font-family: 'Gilroy ExtraBold'
+  src: url('./fonts/Gilroy-ExtraBold.eot')
+  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),url('./fonts/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-ExtraBold.woff') format('woff'), url('./fonts/Gilroy-ExtraBold.ttf') format('truetype')
+  font-weight: 800
+  font-style: normal
+$g_800: 'Gilroy ExtraBold'
+
+
 @font-face 
   font-family: 'Gilroy SemiBold'
   src: url('./fonts/Gilroy-SemiBold.eot')
@@ -58,8 +67,8 @@ $g_400: 'Gilroy Regular'
 @font-face
   font-family: 'Gilroy Light'
   src: url('./fonts/Gilroy-Light.eot')
-  src: local('Gilroy Light'), local('Gilroy-Regular'), url('./fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Light.woff') format('woff'), url('./fonts/Gilroy-Light.ttf') format('truetype')
-  font-weight: 400
+  src: local('Gilroy Light'), local('Gilroy-Light'), url('./fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Light.woff') format('woff'), url('./fonts/Gilroy-Light.ttf') format('truetype')
+  font-weight: 300
   font-style: normal
 $g_300: 'Gilroy Light'
 
@@ -170,7 +179,7 @@ $open_sans: 'Open Sans', sans-serif
 $transition_default: .3s linear
 $black: #323232
 $red: #D82F2F
-
+$gold: #ECC48C
 
 a, button
   +transition($transition_default)
@@ -247,6 +256,63 @@ body
 .h_row
   +flex
   +wrap
+  @media (max-width: 991px)
+    +ai-center
+    +j-beetween
+    padding: 7px 0
+    height: 80px
+    position: relative
+
+
+.mm_btn
+  width: 30px
+  height: 21px
+  +flex
+  .hamburger
+    width: 30px
+    height: 21px
+    background: none
+    border: 0
+    position: relative
+    span
+      position: absolute
+      left: 0
+      width: 100%
+      height: 3px
+      background: $black
+      +transition($transition_default)
+      &:nth-child(1)
+        top: 0
+      &:nth-child(2)
+        top: 0
+        bottom: 0
+        margin: auto
+      &:nth-child(3)
+        bottom: 0
+  @media (min-width: 992px)
+    display: none
+
+.mm_act
+  overflow: hidden
+  header
+    background: #fff
+    border-bottom: 1px solid #E8E8E8
+
+  @media (max-width: 991px)
+    .main_menu
+      +transform(translateX(0))
+
+  .mm_btn
+    .hamburger
+      span
+        &:nth-child(1)
+          +transform(rotate(45deg))
+          top: 9px
+        &:nth-child(2)
+          opacity: 0
+        &:nth-child(3)
+          bottom: 9px
+          +transform(rotate(-45deg))
 
 
 
@@ -258,6 +324,78 @@ header
   background: #fff
   z-index: 999
   font-size: 16px
+  @media (max-width: 991px)
+    +flex
+    +ai-center
+    background: linear-gradient(180deg, #FCDB9E -15%, #FAD99D 11.69%, #E8C38C 57.27%, #DDB887 92.69%, #E7C289 97.94%, #D7B183 100.71%)
+
+  &.fixed
+    @media (min-width: 992px)
+      nav
+        display: none
+
+      .main_menu
+        width: calc(100% - 210px)
+        @media (max-width: 1420px)
+          width: calc(100% - 170px)
+        .menu
+          +flex
+          +ai-center
+          +j-start
+          width: 63%
+          margin-bottom: 0
+          li
+            margin-right: 20px
+            &:last-child
+              margin-right: 0
+
+
+        .h_contacts
+          display: none
+        .h_right
+          width: 37%
+          //+j-beetween
+        .dropdown
+          margin-right: 28px
+          padding-bottom: 0
+          @media (max-width: 1420px)
+            margin-right: 10px
+
+        .soc_menu
+          display: none
+        .btn_default
+          +flex
+
+      .logo
+        max-width: 195px
+        margin-right: 15px
+        margin-bottom: 0
+        +box-shadow(none)
+        @media (max-width: 1420px)
+          max-width: 170px
+          margin-right: 0
+        a
+          padding: 5px
+          +flex
+          +ai-center
+          img
+            max-width: 85px
+            margin-right: 15px
+            @media (max-width: 1420px)
+              margin-right: 5px
+          .logo_txt
+            text-align: left
+            font-size: 14px
+            line-height: 18px
+            @media (max-width: 1420px)
+              font-size: 12px
+              line-height: 1.2
+
+
+
+
+
+
 
 
 .logo
@@ -269,21 +407,47 @@ header
   text-align: center
   margin-right: 25px
   margin-bottom: -70px
+  @media (max-width: 1420px)
+    max-width: 155px
+    margin-right: 15px
+    margin-bottom: -60px
+  @media (max-width: 991px)
+    margin-bottom: 0
+    background: none
+    +box-shadow(none)
   a
     display: inline-block
     text-align: center
     padding: 15px 40px
     text-decoration: none
     color: $black
+    @media (max-width: 1420px)
+      padding: 4px 15px
+    @media (max-width: 991px)
+      padding: 0
+      +flex
+      +ai-center
     &:hover, &:focus
       text-decoration: none
     img
       margin-bottom: 3px
+      @media (max-width: 1420px)
+        max-width: 85px
+      @media (max-width: 991px)
+        max-width: 63px
+        margin-right: 15px
     .logo_txt
       display: block
       text-align: center
       font-size: 14px
       text-transform: uppercase
+      @media (max-width: 1420px)
+        line-height: 1.2
+        font-size: 12px
+      @media (max-width: 991px)
+        text-align: left
+        font-size: 14px
+
 
 
 
@@ -293,25 +457,57 @@ header
   +flex
   +j-beetween
   +ai-center
-
+  @media (max-width: 1420px)
+    width: calc(100% - 170px)
   .btn_default
     display: none
+    background: $red
+    color: #fff
+    text-transform: uppercase
+    font-size: 16px
+    font-family: $g_600
+    +ai-center
+    +j-center
+    width: 100%
+    max-width: 180px
+    height: 50px
+    @media (max-width: 1420px)
+      max-width: 145px
+      font-size: 14px
+      min-width: 110px
+      line-height: 1.2
+
+
+
   .menu
-    @media (min-width: 1201px)
-      display: none
+    @media (min-width: 991px)
+      //display: none
+
+    li
+      a
+        @media (max-width: 1420px)
+          font-size: 14px
+        @media (max-width: 991px)
+          font-size: 16px
 
   .h_right
     width: 30%
     +flex
     +j-end
+    @media (max-width: 991px)
+      margin-bottom: 40px
 
   .dropdown
     position: relative
     +flex
-    +wrap
+    //+wrap
     +ai-center
     padding-bottom: 10px
     margin-right: 10px
+    @media (max-width: 1420px)
+      padding-bottom: 0
+    @media (max-width: 991px)
+
     &.act
       .dropdown_menu
         display: block
@@ -345,6 +541,15 @@ header
         font-family: $g_500
         text-decoration: none
         line-height: 1.2
+        white-space: nowrap
+        @media (max-width: 1420px)
+          font-size: 18px
+        @media (max-width: 1200px)
+          font-size: 16px
+        @media (max-width: 991px)
+          font-size: 20px
+        @media (max-width: 375px)
+          font-size: 18px
         &:hover, &:focus
           text-decoration: none
 
@@ -355,6 +560,10 @@ header
         font-family: $g_300
         color: $black
         line-height: 1.2
+        @media (max-width: 1200px)
+          font-size: 10px
+        @media (max-width: 991px)
+          font-size: 12px
 
     .dropdown_menu
       position: absolute
@@ -368,6 +577,8 @@ header
       ul
         li
           margin-bottom: 23px
+          @media (max-width: 1420px)
+            margin-bottom: 15px
           &:last-child
             margin-bottom: 0
           a
@@ -377,27 +588,124 @@ header
             line-height: 24px
             font-family: $g_500
             white-space: nowrap
+            @media (max-width: 1420px)
+              font-size: 18px
+            @media (max-width: 1200px)
+              font-size: 16px
+
+
+  @media (max-width: 991px)
+    position: fixed
+    top: 81px
+    right: 0
+    background: #fff
+    z-index: 999
+    //display: none
+    width: 100%
+    height: calc(100% - 80px)
+    padding: 35px 15px 15px
+    +ai-start
+    +j-start
+    +col
+    +transition($transition_default)
+    +transform(translateX(100%))
+    overflow: auto
+    .menu
+      display: block
+      order: 1
+      width: 100%
+      li
+        width: 100%
+    .h_right
+      order: 2
+      width: 100%
+      +j-start
+    .h_contacts
+      order: 3
+      width: 100% !important
+      margin-bottom: 20px !important
+      li
+        width: 100%
+        +flex
+
+    .mm_soc
+      order: 4
+
+
+
+
+
+  .mm_soc
+    +flex
+    +ai-start
+    span
+      font-size: 12px
+      line-height: 14px
+      font-family: $g_300
+      color: $black
+      margin-right: 50px
+
+    @media (min-width: 992px)
+      display: none
+
+    .mm_soc_menu
+      +flex
+      +ai-start
+      li
+        + li
+          margin-left: 22px
 
 
   .soc_menu
     +flex
     +ai-center
     margin-bottom: 18px
+    @media (max-width: 1420px)
+      margin-bottom: 0
     li
       + li
         margin-left: 25px
 
-
+  .menu
+    //display: none
+    +wrap
+    +j-beetween
+    width: 70%
+    margin-bottom: 25px
+    @media (min-width: 992px)
+      display: none
   .h_contacts
     +flex
     +wrap
     +j-beetween
     width: 70%
     margin-bottom: 25px
+    @media (max-width: 1420px)
+      +j-start
+      margin-bottom: 0
     li
       font-family: $g_400
       font-size: 16px
       color: $black
+      margin-right: 15px
+
+      @media (max-width: 1420px)
+        font-size: 15px
+      @media (max-width: 1200px)
+        width: 100%
+        font-size: 14px
+      @media (max-width: 991px)
+        font-size: 16px
+        margin-bottom: 18px
+        &:nth-child(1)
+          order: 2
+        &:nth-child(2)
+          order: 1
+        &:nth-child(3)
+          order: 3
+        span, a
+          padding-left: 40px
+
       a
         color: $black
         text-decoration: underline
@@ -409,12 +717,17 @@ header
             text-decoration: underline
 
 
+
+
+
 .work
   text-decoration: underline
 
 .location, .email
   position: relative
   padding-left: 40px
+  @media (max-width: 1420px)
+    padding-left: 30px
   &:before
     +b_a
     top: 0
@@ -442,17 +755,26 @@ header
 
 nav
   background: linear-gradient(180deg, #FCDB9E -15%, #FAD99D 11.69%, #E8C38C 57.27%, #DDB887 92.69%, #E7C289 97.94%, #D7B183 100.71%)
+  @media (max-width: 991px)
+    display: none
   .container
     padding-left: 245px
+    @media (max-width: 1420px)
+      padding-left: 170px
   .d_flex
     +j-beetween
 
 .menu
   +flex
   +ai-center
+  +wrap
   li
     margin-right: 42px
     position: relative
+    @media (max-width: 1420px)
+      margin-right: 20px
+    @media (max-width: 991px)
+      margin-bottom: 15px
     &.sale
       a
         position: relative
@@ -469,6 +791,9 @@ nav
           position: absolute
           right: -15px
           bottom: 100%
+          @media (max-width: 991px)
+            right: -25px
+            bottom: 5px
 
 
     a
@@ -476,9 +801,17 @@ nav
       font-size: 16px
       color: $black
       text-decoration: none
+      @media (max-width: 1420px)
+        font-size: 15px
+      @media (max-width: 1200px)
+        font-size: 14px
+      @media (max-width: 991px)
+        font-size: 16px
+
       &:hover, &:focus
         text-decoration: none
         color: $red
+
 
 
 .btn_default
@@ -497,6 +830,12 @@ nav
   text-align: center
   text-decoration: none
   border: 0
+  @media (max-width: 1420px)
+    height: 60px
+    max-width: 180px
+  @media (max-width: 1200px)
+    font-size: 16px
+    line-height: 1.2
 
   &:hover
     text-decoration: none
@@ -508,6 +847,1023 @@ nav
 
 
 
+
+
+
+
+.first_screen
+  .d_flex
+    position: relative
+    //+wrap
+    .girl
+      position: absolute
+      //opacity: 0
+
+
+section
+  padding: 140px 0
+  @media (max-width: 1420px)
+    padding: 110px 0
+  @media (max-width: 1200px)
+    padding: 90px 0
+  @media (max-width: 991px)
+    padding: 70px 0
+
+
+.section_title
+  color: $black
+  font-size: 46px
+  line-height: 1.2
+  font-family: $g_500
+  margin-bottom: 60px
+  @media (max-width: 1420px)
+    font-size: 40px
+    margin-bottom: 40px
+  @media (max-width: 1200px)
+    font-size: 35px
+  @media (max-width: 991px)
+    font-size: 30px
+    margin-bottom: 38px
+
+.bg_grey
+  background: #F2F2F2
+
+
+.tabs_block
+  .tabs_nav
+    +flex
+    +wrap
+    @media (max-width: 991px)
+      display: none
+    .tab_item
+      width: 25%
+      height: 100px
+      +flex
+      +ai-center
+      +j-center
+      background: linear-gradient(180deg, #FCDB9E -15%, #FAD99D 11.69%, #E8C38C 57.27%, #DDB887 92.69%, #E7C289 97.94%, #D7B183 100.71%)
+      color: $black
+      font-size: 18px
+      font-family: $g_500
+      cursor: pointer
+      @media (max-width: 1420px)
+        height: 70px
+        font-size: 16px
+
+      &.active, &:hover
+        background: #fff
+        font-family: $g_600
+        border-top: 6px solid $red
+
+      + .tab_item
+        border-left: 2px solid #fff
+
+  .tabs_content_list
+    .tabs_content_item
+      background: #fff
+      @media (min-width: 992px)
+        display: none
+      &.active
+        display: block
+
+      @media (max-width: 991px)
+        margin-bottom: 2px
+
+      .m_tab_item
+        background: linear-gradient(180deg, #FCDB9E -15%, #FAD99D 11.69%, #E8C38C 57.27%, #DDB887 92.69%, #E7C289 97.94%, #D7B183 100.71%)
+        position: relative
+        padding: 16px
+        color: $black
+        font-size: 18px
+        font-family: $g_500
+        cursor: pointer
+        &.active
+          background: #fff
+          border-top: 4px solid $red
+          border-bottom: 1px solid #E8E8E8
+
+        &:before
+          +b_a
+          right: 16px
+          top: 0
+          bottom: 0
+          width: 0
+          height: 0
+          margin: auto
+          border-top: 5px solid $black
+          border-left: 5px solid transparent
+          border-right: 5px solid transparent
+
+
+
+
+        @media (min-width: 992px)
+          display: none
+      .tabs_content_body
+        @media (max-width: 991px)
+          display: none
+          margin-bottom: 25px
+
+        .specialty_group
+          border-bottom: 1px solid #E8E8E8
+          padding: 45px 45px 8px
+          @media (max-width: 991px)
+            padding: 15px
+          .g_title
+            text-transform: uppercase
+            font-size: 18px
+            line-height: 28px
+            font-family: $g_600
+            border-bottom: 1px solid #DBA342
+            display: inline-block
+            margin-bottom: 40px
+            @media (max-width: 991px)
+              margin-bottom: 30px
+
+          .specialty_title
+            font-size: 16px
+            font-family: $g_600
+            line-height: 20px
+            text-transform: uppercase
+            margin-bottom: 30px
+            @media (max-width: 991px)
+              margin-bottom: 20px
+          ul
+            +flex
+            +wrap
+            li
+              width: 25%
+              position: relative
+              display: inline-block
+              padding-left: 22px
+              color: #4E4E4E
+              font-size: 16px
+              line-height: 22px
+              font-family: $open_sans
+              padding-right: 15px
+              margin-bottom: 30px
+              @media (max-width: 1200px)
+                width: 33.33%
+              @media (max-width: 991px)
+                width: 50%
+                margin-bottom: 18px
+              @media (max-width: 767px)
+                width: 100%
+              &:before
+                +b_a
+                width: 3px
+                height: 3px
+                left: 8px
+                top: 9px
+                background: #4E4E4E
+                font-size: 18px
+
+.section_price
+  background: linear-gradient(162.75deg, #D82F2F -88.13%, #323232 45.97%, #323232 135.16%)
+  .section_title, .sub_title
+    color: #fff
+  .sub_title
+    @media (max-width: 991px)
+      padding-right: 10px
+
+  .section_title
+    position: relative
+    &:before
+      +b_a
+      left: 385px
+      top: 45px
+      width: 284px
+      height: 127px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='284' height='127' viewBox='0 0 284 127' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M272.045 35.839C280.114 30.6014 283.648 23.7883 282.935 17.3912C282.222 11.0032 277.313 5.41184 269.314 2.5332C253.321 -3.22177 224.71 1.64594 189.347 32.2433C181.634 38.9162 175.565 45.8907 170.898 52.9223C158.97 51.309 147.187 48.7527 135.76 45.6838C115.054 40.1226 95.5718 32.8933 78.5568 26.5796L78.5566 26.5795L78.556 26.5793C77.5881 26.2202 76.6283 25.864 75.6766 25.5112C58.0561 18.98 43.1344 13.5779 32.6024 12.5034C24.3308 11.6595 17.0373 14.1145 11.4909 17.3336C5.97068 20.5374 2.0827 24.5563 0.640625 26.9898L2.36121 28.0094C3.5858 25.9429 7.18708 22.1439 12.4948 19.0633C17.7764 15.998 24.6495 13.7024 32.3994 14.4931C42.6175 15.5356 57.2583 20.8173 74.9815 27.3866C75.9385 27.7413 76.9041 28.0996 77.8781 28.461L77.8782 28.4611C94.8805 34.7702 114.442 42.0292 135.242 47.6154C146.423 50.6184 157.977 53.1424 169.701 54.7763C152.854 81.5971 156.067 108.933 166.085 123.251L156.335 119.779L155.664 121.663L168.597 126.268L173.202 113.336L171.318 112.665L167.879 122.324C158.178 108.691 154.764 81.6759 171.88 55.0693C205.583 59.4377 240.577 56.2659 272.045 35.839ZM190.655 33.7558C183.375 40.0548 177.599 46.61 173.11 53.2102C206.203 57.3523 240.313 54.0529 270.956 34.1614C278.603 29.1976 281.552 23.0349 280.947 17.613C280.341 12.1821 276.129 7.1111 268.637 4.41506C253.646 -0.979321 225.792 3.35412 190.655 33.7558Z' fill='%23A38862'/%3e%3c/svg%3e ")
+      @media (max-width: 991px)
+        width: 183px
+        height: 72px
+        right: 0
+        left: initial
+        top: 7px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='183' height='72' viewBox='0 0 183 72' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M162.434 5.00904C160.133 0.368614 154.928 -0.640425 149.534 0.342014C144.087 1.33408 138.017 4.39298 133.255 8.514C128.512 12.6184 124.891 17.9334 124.681 23.5076C124.483 28.7442 127.296 33.8789 134.236 38.184C126.841 42.4092 118.568 46.6259 110.188 50.8624C96.2406 57.9138 81.2726 57.7438 67.2345 54.7674C55.066 52.1874 43.6879 47.5218 34.3475 43.6917L34.3451 43.6907C32.8985 43.0976 31.5008 42.5244 30.1565 41.9822C13.6964 35.3424 3.22543 43.3522 0 48.412L1.67924 49.5006C4.44268 45.1656 13.9347 37.6068 29.4151 43.8514C30.7449 44.3878 32.1331 44.9572 33.5744 45.5483L33.5754 45.5488C42.9066 49.3762 54.4651 54.1171 66.8238 56.7375C81.108 59.7661 96.5835 59.9925 111.083 52.6621C119.817 48.2465 128.515 43.8144 136.247 39.3454C144.327 43.7274 151.074 46.8943 156.581 49.4241C157.288 49.749 157.974 50.0629 158.638 50.3671L158.639 50.3674C163.198 52.455 166.759 54.0854 169.459 55.6763C172.547 57.4954 174.33 59.1641 175.179 61.2113C175.934 63.033 176.016 65.3143 175.339 68.5687L172.884 63.8749L171.118 64.8142L174.877 72L182.002 68.2094L181.071 66.4288L177.413 68.3747C178.006 65.2063 177.937 62.6459 177.021 60.4348C175.92 57.7793 173.679 55.8306 170.466 53.938C167.67 52.2907 164.001 50.6111 159.463 48.5336L159.463 48.5335C158.797 48.2287 158.112 47.9152 157.409 47.5921C152.167 45.1839 145.821 42.208 138.277 38.1576C142.961 35.3827 147.242 32.5928 150.898 29.7833C155.935 25.9139 159.879 21.9404 162.041 17.8354C164.232 13.6766 164.595 9.36832 162.434 5.00904ZM149.689 28.1819C145.833 31.1443 141.259 34.0919 136.226 37.0341C128.966 32.8497 126.506 28.0724 126.675 23.5841C126.855 18.8165 130.003 13.9807 134.555 10.0418C139.088 6.1196 144.84 3.24279 149.889 2.32314C154.991 1.39386 158.956 2.49709 160.648 5.90936C162.48 9.60279 162.212 13.2195 160.278 16.8909C158.316 20.616 154.64 24.3779 149.689 28.1819Z' fill='%23A38862'/%3e%3c/svg%3e ")
+
+
+.sub_title
+  font-size: 18px
+  line-height: 25px
+  font-family: $open_sans
+  max-width: 394px
+  margin-bottom: 60px
+  @media (max-width: 991px)
+    font-size: 16px
+    line-height: 22px
+    margin-bottom: 40px
+
+.products_list
+  padding: 0 100px
+  @media (max-width: 991px)
+    padding: 0
+  &:not(.slick-slider)
+    +flex
+    +wrap
+    .item
+      width: 33.33%
+      margin-bottom: 20px
+      @media (max-width: 1200px)
+        width: 50%
+      @media (max-width: 991px)
+        width: 100%
+  &.slick-slider
+    @media (max-width: 991px)
+      +flex
+      +wrap
+      +ai-center
+      +j-center
+      .slick-list
+        order: 1
+      .slick-prev
+        order: 2
+        position: relative
+        top: initial
+        right: initial
+        left: initial
+        bottom: initial
+        +transform(translate(0, 0))
+        margin-right: 26px
+      .slick-dots
+        order: 3
+        bottom: 0
+        width: auto
+      .slick-next
+        order: 4
+        position: relative
+        top: initial
+        right: initial
+        left: initial
+        bottom: initial
+        +transform(translate(0, 0))
+        margin-left: 26px
+  .item
+    padding: 0 10px
+    @media (max-width: 767px)
+      padding: 0
+    .product_item
+      text-align: center
+      background: #fff
+      padding: 60px 45px
+      @media (max-width: 991px)
+        padding: 40px 15px
+      picture
+       display: inline-block
+       width: 100px
+       height: 100px
+       +border-radius(50%)
+       background: #FFFFFF
+       border: 1px solid #C4C4C4
+       position: relative
+       margin-bottom: 20px
+       @media (max-width: 991px)
+          margin-bottom: 10px
+       img
+         max-width: 90px
+         max-height: 90px
+         position: absolute
+         +m_a
+    .product_title
+      text-align: center
+      font-size: 20px
+      line-height: 24px
+      font-family: $g_500
+      margin-bottom: 37px
+      @media (max-width: 991px)
+        font-size: 16px
+        line-height: 19px
+        margin-bottom: 20px
+    .s_title
+      color: #4E4E4E
+      font-size: 14px
+      font-family: $open_sans
+      display: block
+      text-align: center
+      margin-bottom: 12px
+    .product_price
+      margin-bottom: 17px
+      .price_row
+        +flex
+        +ai-center
+        +j-center
+        font-size: 24px
+        font-family: $g_400
+        @media (max-width: 1420px)
+          font-size: 20px
+        @media (max-width: 991px)
+          font-size: 24px
+        .current_price
+          color: #fff
+          background: $black
+          padding: 7px 19px
+        .old_price
+          color: $black
+          padding: 7px 19px
+
+    .product_equivalent
+      margin-bottom: 40px
+      @media (max-width: 991px)
+        margin-bottom: 22px
+      p
+        font-size: 14px
+        line-height: 19px
+        font-family: $open_sans
+    .btn_default
+      margin: auto
+      @media (max-width: 991px)
+        max-width: 100%
+
+
+.slick-list
+  margin-bottom: 35px
+
+.slick-dots
+  position: relative
+  +flex
+  +ai-center
+  +j-center
+  li
+    width: auto
+    height: auto
+    + li
+      margin-left: 13px
+    &.slick-active, &:hover
+      button
+        background: #ECC48C
+    button
+      background: #6C6C6C
+      width: 10px
+      height: 10px
+      &:before
+        display: none
+
+
+
+.slick-arrow
+  width: 23px
+  height: 40px
+  opacity: 1
+  z-index: 3
+  &:before
+    +b_a
+    width: 23px
+    height: 40px
+    +m_a
+    opacity: 1
+
+
+
+.slick-prev
+  left: 0
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='40' viewBox='0 0 23 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M21 2L3 20L21 38' stroke='%236C6C6C' stroke-width='4'/%3e%3c/svg%3e ")
+.slick-next
+  right: 0
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='40' viewBox='0 0 23 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 38L20 20L2 2' stroke='%236C6C6C' stroke-width='4'/%3e%3c/svg%3e ")
+
+
+
+
+.text_uppercase
+  text-transform: uppercase
+
+.suggestions
+  .d_flex
+    +wrap
+    .title
+      font-size: 24px
+      line-height: 29px
+      font-family: $g_600
+      //max-width: 370px
+      margin-bottom: 60px
+      @media (max-width: 991px)
+        margin-bottom: 40px
+
+    img
+      margin-bottom: 50px
+      max-width: 60px
+    .left_col
+      background: linear-gradient(161.73deg, #D82F2F -81.62%, #323232 62.08%, #323232 134.79%)
+      color: #fff
+      padding: 45px
+      margin-right: 20px
+      @media (min-width: 1201px)
+        width: 350px
+      @media (min-width: 1421px)
+        width: 460px
+      @media (max-width: 1200px)
+        width: 100%
+        margin-right: 0
+        margin-bottom: 20px
+        padding: 30px
+      @media (max-width: 991px)
+        padding: 35px 15px
+      strong, b
+        display: block
+        color: #DBA342
+      .title
+        color: #fff
+
+      ul
+        li
+          position: relative
+          font-family: $open_sans
+          font-size: 16px
+          line-height: 22px
+          padding-bottom: 30px
+          @media (max-width: 991px)
+
+          &:last-child
+            padding-bottom: 0
+            &:before
+              display: none
+          &:before
+            +b_a
+            width: 1px
+            top: 24px
+            bottom: 2px
+            left: 9px
+            border: 1px dashed rgba(255, 255, 255, 0.3)
+
+          span
+            position: relative
+            display: inline-block
+            padding-left: 48px
+            &:before, &:after
+              +b_a
+              left: 0
+            &:before
+              width: 18px
+              height: 18px
+              border: 1px solid #ECC48C
+              +border-radius(50%)
+              top: 2px
+            &:after
+              background: #ECC48C
+              width: 10px
+              height: 10px
+              +border-radius(50%)
+              top: 6px
+              left: 4px
+
+
+
+    .right_col
+      padding: 45px
+      border: 1px solid #C4C4C4
+      @media (min-width: 1201px)
+        width: calc(100% - 370px)
+      @media (min-width: 1421px)
+        width: calc(100% - 480px)
+      @media (max-width: 1200px)
+        width: 100%
+        padding: 30px
+      @media (max-width: 991px)
+        padding: 35px 15px
+
+      .suggestions_row
+        +flex
+        +wrap
+        .item
+          width: 25%
+          padding: 0 10px
+
+          @media (max-width: 1200px)
+            width: 33.33%
+            margin-bottom: 32px
+          @media (max-width: 991px)
+            width: 50%
+          @media (max-width: 767px)
+            width: 100%
+          &:last-child
+            margin-bottom: 0
+
+          .item_title
+            font-size: 18px
+            line-height: 22px
+            text-transform: uppercase
+            font-family: $g_600
+            margin-bottom: 20px
+            @media (max-width: 991px)
+              margin-bottom: 10px
+            strong
+              color: #DBA342
+          .item_desc
+            color: #4E4E4E
+            font-size: 16px
+            line-height: 22px
+            font-family: $open_sans
+
+.terms
+  .scroll_block
+    display: block
+    width: 100%
+    overflow: auto
+    margin-bottom: 100px
+    @media (max-width: 1200px)
+      padding-bottom: 24px
+      margin-bottom: 37px
+    &:last-of-type
+      margin-bottom: 0
+    &::-webkit-scrollbar
+      width: 3px
+      height: 4px
+      background:  #fff
+    &::-webkit-scrollbar-thumb:horizontal
+      background:  $gold
+
+  table
+
+    width: 100%
+    border-collapse: collapse
+    border: 1px solid #E8E8E8
+    min-width: 1000px
+
+    thead
+      tr
+        td
+          background: linear-gradient(180deg, #FCDB9E -15%, #FAD99D 11.69%, #E8C38C 57.27%, #DDB887 92.69%, #E7C289 97.94%, #D7B183 100.71%)
+          padding: 37px 45px
+          text-transform: uppercase
+          font-size: 18px
+          font-family: $g_600
+          @media (max-width: 991px)
+            padding: 17px 45px
+
+    tbody
+      background: #fff
+
+      tr
+        //+flex
+        border-bottom: 1px solid  #E8E8E8
+        &:first-child
+          td
+            font-weight: 600
+
+        td
+          padding: 25px
+          text-align: center
+          font-size: 16px
+          line-height: 22px
+          font-family: $open_sans
+          &:nth-child(1)
+            padding-left: 45px
+            text-align: left
+          &:nth-child(2), &:nth-child(3)
+            text-align: left
+
+
+
+.show_all
+  border: 2px solid $red
+  color: $red
+  width: 100%
+  height: 56px
+  +flex
+  +ai-center
+  +j-center
+  background: #fff
+  text-transform: uppercase
+  font-size: 16px
+  font-family: $g_600
+  @media (min-width: 992px)
+    display: none
+.adv_row
+  +flex
+  +j-beetween
+  +wrap
+  @media (max-width: 991px)
+    margin-bottom: 20px
+    &:not(.show)
+      max-height: 435px
+      overflow: hidden
+
+  > div
+    max-width: 570px
+    @media (max-width: 1200px)
+      width: 100%
+      max-width: 100%
+  .title
+    font-size: 24px
+    line-height: 29px
+    font-family: $g_600
+    margin-bottom: 60px
+    @media (max-width: 991px)
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 30px
+  .adv_img
+    @media (max-width: 1200px)
+      display: none
+  .adv_img_mobile
+    margin: 30px auto
+    @media (min-width: 1201px)
+      display: none
+
+
+    @media (min-width: 992px)
+      display: none
+  .adv_ilst
+    li
+      position: relative
+      padding-left: 40px
+      font-size: 18px
+      line-height: 25px
+      font-family: $open_sans
+      margin-bottom: 30px
+      @media (max-width: 991px)
+        font-size: 16px
+        line-height: 22px
+        margin-bottom: 17px
+      &:last-child
+        margin-bottom: 0
+      &:before
+        +b_a
+        left: 0
+        top: 3px
+        width: 20px
+        height: 20px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='20' height='20' rx='10' fill='%23ECC48C'/%3e%3cpath d='M10 4L11.3471 8.1459H15.7063L12.1796 10.7082L13.5267 14.8541L10 12.2918L6.47329 14.8541L7.82037 10.7082L4.29366 8.1459H8.65292L10 4Z' fill='white'/%3e%3c/svg%3e ")
+
+
+
+
+.need_serv
+  +flex
+  +wrap
+  .item
+    width: 25%
+    margin-bottom: 54px
+    @media (max-width: 1200px)
+      width: 33.33%
+    @media (max-width: 991px)
+      width: 50%
+    @media (max-width: 767px)
+      width: 100%
+      margin-bottom: 40px
+      &:last-child
+        margin-bottom: 0
+    .item_content
+      max-width: 250px
+      @media (max-width: 767px)
+        max-width: 100%
+        +flex
+        //+ai-center
+    .counter
+      font-family: $g_800
+      font-size: 65px
+      line-height: 81px
+      color: #fff
+      -webkit-text-stroke: 1px $gold
+      margin-bottom: 25px
+      @media (max-width: 767px)
+        margin-bottom: 0
+        margin-right: 25px
+        line-height: 1
+
+    .desc
+      font-family: $g_600
+      font-size: 18px
+      text-transform: uppercase
+      line-height: 22px
+
+
+
+
+.contacts
+  .d_flex
+    @media (max-width: 991px)
+      +wrap
+    .left_col
+      width: calc(100% - 840px)
+      @media (max-width: 991px)
+        width: 100%
+    .right_col
+      width: 100%
+      max-width: 840px
+      @media (max-width: 991px)
+        max-width: 100%
+        margin: 0 -10px
+
+.c_list
+  li
+    margin-bottom: 20px
+    &.loc
+      font-size: 20px
+      font-family: $open_sans
+      padding-top: 20px
+      padding-right: 20px
+      @media (max-width: 991px)
+        font-size: 18px
+    a
+      color: $black
+      font-size: 24px
+      line-height: 29px
+      font-family: $g_500
+      text-decoration: none
+      &:hover, &:focus
+        text-decoration: none
+        color: $gold
+      &.email2
+        font-size: 20px
+        color: $gold
+        font-family: $open_sans
+        font-weight: 600
+        display: inline-block
+        @media (min-width: 992px)
+          margin-bottom: 20px
+      &.work
+        font-size: 16px
+        font-family: $open_sans
+        text-decoration: underline
+
+
+
+
+footer
+  background: linear-gradient(160.63deg, #323232 -57.13%, #323232 31.17%, #323232 99.56%)
+  color: #fff
+  padding: 140px 0 35px
+  @media (max-width: 1420px)
+    padding: 110px 0 35px
+  @media (max-width: 1200px)
+    padding: 90px 0 35px
+  @media (max-width: 991px)
+    padding: 70px 0 35px
+  @media (max-width: 767px)
+    padding: 70px 0 20px
+
+
+  .footer_row
+    +flex
+    +j-beetween
+    +wrap
+    > div
+      @media (max-width: 1200px)
+        margin-bottom: 20px
+      @media (max-width: 767px)
+        width: 100%
+    .left_col
+      @media (max-width: 767px)
+        margin-bottom: 55px
+    .right_col
+      @media (max-width: 767px)
+        +flex
+        +j-center
+    .f_logo
+      margin-top: -35px
+      a
+        +flex
+        +ai-center
+        text-decoration: none
+        color: #fff
+        img
+          max-width: 100px
+          max-height: 100px
+          margin-right: 15px
+          @media (max-width: 767px)
+            max-width: 60px
+            max-height: 60px
+        .logo_txt
+          max-width: 75px
+          display: inline-block
+          text-transform: uppercase
+          color: #fff
+          font-size: 14px
+          line-height: 18px
+          font-family: $open_sans
+    .menu
+      @media (max-width: 767px)
+        width: 100%
+      li
+        @media (max-width: 1200px)
+          + li
+            margin-right: 40px
+
+        @media (max-width: 767px)
+          width: 50%
+          margin-right: 0
+          + li
+            margin-right: 0
+
+        a
+          color: #fff
+          &:hover, &:focus
+            color: $red
+
+    .phones
+      li
+        margin-bottom: 20px
+        @media (max-width: 1200px)
+          margin-bottom: 10px
+        &:last-child
+          margin-bottom: 0
+        a
+          color: #fff
+          text-decoration: none
+          font-size: 20px
+          font-family: $g_500
+          @media (max-width: 1200px)
+            font-size: 16px
+          @media (max-width: 767px)
+            font-size: 20px
+
+          &:hover, &:focus
+            text-decoration: none
+            color: $red
+
+  .footer_row2
+    +flex
+    +j-beetween
+    +ai-center
+    +wrap
+    @media (max-width: 767px)
+      > div
+        width: 100%
+      .right_col
+        order: 1
+        +flex
+        +col
+        +ai-center
+      .center_col
+        order: 2
+      .left_col
+        order: 3
+    > div
+      @media (max-width: 1200px)
+        margin-bottom: 20px
+    .footer_txt
+      color: #AFAFAF
+      font-size: 16px
+      line-height: 22px
+      font-family: $open_sans
+      margin-bottom: 25px
+      @media (max-width: 1200px)
+        font-size: 14px
+      @media (max-width: 767px)
+        margin-bottom: 20px
+      + ul
+        +flex
+        +ai-center
+        +j-beetween
+        li
+          color: #AFAFAF
+          font-size: 16px
+          @media (max-width: 1200px)
+            font-size: 14px
+
+    .mm_soc
+      +flex
+      +ai-center
+      @media (max-width: 767px)
+        +j-center
+      span
+        color: #AFAFAF
+        font-size: 16px
+        display: inline-block
+        font-family: $open_sans
+        margin-right: 25px
+        @media (max-width: 1200px)
+          font-size: 14px
+        @media (max-width: 767px)
+          font-size: 12px
+      .f_soc_menu
+        +flex
+        +ai-center
+
+        li
+          + li
+            margin-left: 20px
+            @media (max-width: 767px)
+              margin-left: 0
+          a
+            width: 55px
+            height: 55px
+            border: 1px solid #AFAFAF
+            +flex
+            +ai-center
+            +j-center
+            @media (max-width: 767px)
+              border: 0
+              width: 45px
+
+    .soc_menu
+      +flex
+      +ai-center
+      +j-end
+      margin-bottom: 25px
+      @media (max-width: 1200px)
+        +j-start
+      @media (max-width: 767px)
+        margin-bottom: 35px
+      span
+        color: #AFAFAF
+        font-size: 16px
+        margin-right: 20px
+        @media (max-width: 1200px)
+          font-size: 14px
+        @media (max-width: 767px)
+          font-size: 12px
+
+
+      ul
+        +flex
+        +ai-center
+        li
+          + li
+            margin-left: 20px
+    .work
+      display: inline-block
+      text-align: center
+      font-size: 16px
+      text-decoration: underline
+      color: #fff
+
+      @media (min-width: 768px)
+        display: none
+    .footer_email
+      @media (max-width: 767px)
+        width: 100%
+        text-align: left
+        position: relative
+        padding-left: 40px
+        font-size: 16px
+        color: #fff
+        text-decoration: none
+        display: inline-block
+        margin-bottom: 20px
+        &:before
+          +b_a
+          left: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 20px
+          height: 16px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M20 0H0V16H20V0ZM18 4L10 9L2 4V2L10 7L18 2V4Z' fill='white'/%3e%3c/svg%3e ")
+      @media (min-width: 768px)
+        display: none
+    .footer_loc
+      font-size: 16px
+      @media (max-width: 1200px)
+        font-size: 14px
+      @media (max-width: 767px)
+        width: 100%
+        text-align: left
+        position: relative
+        padding-left: 40px
+        margin-bottom: 30px
+        &:before
+          +b_a
+          left: 3px
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 14px
+          height: 20px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='20' viewBox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z' fill='white'/%3e%3c/svg%3e ")
+
+
+
+.text_center
+  text-align: center
+
+
+.copyright
+  background: #3A3A3A
+  padding: 40px 0
+  @media (max-width: 767px)
+    padding: 20px 0
+  a
+    text-decoration: underline
+    font-size: 16px
+    font-family: $open_sans
+    color: #fff
+    @media (max-width: 767px)
+      font-size: 14px
+    &:hover, &:focus
+      text-decoration: none
+      color: $gold
+  .d_flex
+    +j-beetween
+    @media (max-width: 767px)
+      +col
+      +j-start
+      +ai-center
+
+
+    .privacy_policy
+      @media (max-width: 767px)
+        margin-bottom: 10px
+    .dev
+      color: #AFAFAF
+      font-size: 16px
+      font-family: $open_sans
+      @media (max-width: 767px)
+        font-size: 14px
 
 
 
