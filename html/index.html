@@ -82,33 +82,70 @@
         </div>
       </nav>
     </header>
-    <!--section.first_screen(style="background-image: url("+dir+"bg.png)")
-    .container
-    
-        .d_flex
-            .text_block
-                h1 Высшее образование Дистанционно Без выезда за пределы РБ
-                .sub_title Хотите получить бесплатную консультацию и совет от специалиста? Свяжитесь с нами
-            //img.girl(src=dir+"girl.png")
-            .form_block
-                .form_block_title Заполните форму, и мы свяжемся с Вами в ближайшее время
-                form
-                    .c_form
-                        .field
-                             input.form_control(type="text" placeholder="Ваше имя")
-                        .field
-                             input.form_control(type="text" placeholder="Телефон")
-                        .field
-                             input.form_control(type="text" placeholder="E-mail")
-                        .field
-                            .checkbox
-                                input(type="checkbox" id="aggree")
-                                label(for="aggree") Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
-                        .field
-                            button.btn_default(type="submit") Оставить заявку
-    
-    
-    -->
+    <section class="first_screen" style="background-image: url(../img/bg.png)">
+      <div class="container">
+        <div class="d_flex">
+          <div class="text_block">
+            <h1>Высшее образование<br> Дистанционно <br>Без выезда<br> за пределы РБ</h1>
+            <div class="sub_title">Хотите получить <span class="text_uppercase">бесплатную консультацию</span> и совет от специалиста? Свяжитесь с нами</div>
+          </div><img class="girl" src="../img/girl.png"/>
+          <div class="form_block">
+            <div class="form_block_title">Заполните форму, и мы свяжемся с Вами в ближайшее время</div>
+            <form>
+              <div class="c_form">
+                <div class="field">
+                  <input class="form_control" type="text" placeholder="Ваше имя"/>
+                </div>
+                <div class="field">
+                  <input class="form_control" type="text" placeholder="Телефон"/>
+                </div>
+                <div class="field">
+                  <input class="form_control" type="text" placeholder="E-mail"/>
+                </div>
+                <div class="field">
+                  <div class="checkbox">
+                    <input type="checkbox" id="aggree" checked="checked"/>
+                    <label for="aggree">Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <button class="btn_default" type="submit">Оставить заявку</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="m_form_block">
+      <div class="container">
+        <div class="form_block">
+          <div class="form_block_title">Заполните форму, и мы свяжемся с Вами в ближайшее время</div>
+          <form>
+            <div class="c_form">
+              <div class="field">
+                <input class="form_control" type="text" placeholder="Ваше имя"/>
+              </div>
+              <div class="field">
+                <input class="form_control" type="text" placeholder="Телефон"/>
+              </div>
+              <div class="field">
+                <input class="form_control" type="text" placeholder="E-mail"/>
+              </div>
+              <div class="field">
+                <div class="checkbox">
+                  <input type="checkbox" id="aggree1" checked="checked"/>
+                  <label for="aggree1">Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.</label>
+                </div>
+              </div>
+              <div class="field">
+                <button class="btn_default" type="submit">Оставить заявку</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <section class="section_tabs bg_grey">
       <div class="container">
         <div class="section_title">Специальности</div>
@@ -557,6 +594,52 @@
         <button class="show_all">Показать все</button>
       </div>
     </section>
+    <section class="about">
+      <div class="container">
+        <div class="d_flex">
+          <div class="left_col">
+            <div class="section_title m_title">О компании</div>
+            <picture><img class="about_logo" src="../img/about_logo.png"/><img class="about_img" src="../img/about_photo.png"/></picture>
+          </div>
+          <div class="right_col">
+            <div class="section_title">О компании</div>
+            <div class="about_sub_title">Мы являемся официальными партнёрами следующих ВУЗов:</div>
+            <div class="partners_list">
+              <div class="item">
+                <picture><img src="../img/partners/1.png"/></picture>
+              </div>
+              <div class="item">
+                <picture><img src="../img/partners/2.png"/></picture>
+              </div>
+              <div class="item">
+                <picture><img src="../img/partners/3.png"/></picture>
+              </div>
+              <div class="item">
+                <picture><img src="../img/partners/4.png"/></picture>
+              </div>
+              <div class="item">
+                <picture><img src="../img/partners/5.png"/></picture>
+              </div>
+            </div>
+            <div class="about_txt">Мы проводим работу по профессиональной ориентации жителей Республики Беларусь по выбору специальности, возможности поступления и обучения в ВУЗах–партнёрах. Наши услуги осуществляются на бесплатной основе для всех обратившихся</div>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="title">Схема работы:</div>
+          <div class="steps_list">
+            <div class="item">
+              <div class="txt">Оставьте заявку для связи</div>
+            </div>
+            <div class="item">
+              <div class="txt">Получите консультацию от специалиста</div>
+            </div>
+            <div class="item">
+              <div class="txt">Приезжайте в офис и оформляйте документы <span>(для ММУ можно выбрать и полностью   дистанционный порядок оформления документов)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="need_serv">
       <div class="container">
         <div class="section_title">Вам необходимы <br>наши услуги если:</div>
@@ -608,6 +691,56 @@
               <div class="counter">8</div>
               <div class="desc">Вы выпускник прошлых лет и не хотите тратить много времени на подготовку к ЦТ?</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="question_form bg_grey">
+      <div class="container">
+        <div class="d_flex">
+          <div class="left_col">
+            <div class="title">Есть вопросы? Задавайте!</div>
+            <p>Хотите получить <span class="text_uppercase">бесплатную консультацию</span> и совет специалиста?</p>
+            <p>Заполните форму, и мы свяжемся с Вами в ближайшее время</p>
+            <div class="text_right"><img src="../img/union6.png"/></div>
+          </div>
+          <div class="right_col">
+            <div class="title">Заполните форму, и мы свяжемся с Вами в ближайшее время</div>
+            <form>
+              <div class="form_row">
+                <div class="field w_50">
+                  <label>Ваше имя</label>
+                  <input class="form_control" type="text" placeholder="Иванов Иван Иванович"/>
+                </div>
+                <div class="field w_50">
+                  <label>Телефон</label>
+                  <input class="form_control" type="text" placeholder="+375 (__) ___ __ __"/>
+                </div>
+                <div class="field w_50">
+                  <label>E-mail</label>
+                  <input class="form_control" type="text" placeholder="ivanovivan@mail.ru"/>
+                </div>
+                <div class="field w_50">
+                  <label></label>
+                  <input class="form_control" type="file"/>
+                </div>
+                <div class="field m_hide">
+                  <label>Сообщение</label>
+                  <textarea class="form_control" placeholder="Введите ваш вопрос"></textarea>
+                </div>
+                <div class="b_row">
+                  <div class="field w_50">
+                    <div class="checkbox">
+                      <input type="checkbox" id="aggree3" checked="checked"/>
+                      <label for="aggree3">Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.</label>
+                    </div>
+                  </div>
+                  <div class="field w_50">
+                    <button class="btn_default" type="submit">Оставить заявку</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

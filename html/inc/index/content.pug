@@ -1,11 +1,11 @@
-//section.first_screen(style="background-image: url("+dir+"bg.png)")
+section.first_screen(style="background-image: url("+dir+"bg.png)")
    .container
 
        .d_flex
            .text_block
-               h1 Высшее образование Дистанционно Без выезда за пределы РБ
-               .sub_title Хотите получить бесплатную консультацию и совет от специалиста? Свяжитесь с нами
-           //img.girl(src=dir+"girl.png")
+               h1 Высшее образование<br> Дистанционно <br>Без выезда<br> за пределы РБ
+               .sub_title Хотите получить <span class="text_uppercase">бесплатную консультацию</span> и совет от специалиста? Свяжитесь с нами
+           img.girl(src=dir+"girl.png")
            .form_block
                .form_block_title Заполните форму, и мы свяжемся с Вами в ближайшее время
                form
@@ -18,10 +18,30 @@
                             input.form_control(type="text" placeholder="E-mail")
                        .field
                            .checkbox
-                               input(type="checkbox" id="aggree")
+                               input(type="checkbox" id="aggree" checked)
                                label(for="aggree") Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
                        .field
                            button.btn_default(type="submit") Оставить заявку
+
+
+section.m_form_block
+    .container
+        .form_block
+            .form_block_title Заполните форму, и мы свяжемся с Вами в ближайшее время
+            form
+                .c_form
+                    .field
+                        input.form_control(type="text" placeholder="Ваше имя")
+                    .field
+                        input.form_control(type="text" placeholder="Телефон")
+                    .field
+                        input.form_control(type="text" placeholder="E-mail")
+                    .field
+                        .checkbox
+                            input(type="checkbox" id="aggree1" checked)
+                            label(for="aggree1") Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
+                    .field
+                        button.btn_default(type="submit") Оставить заявку
 
 
 -var tabs=['БАКАЛАВРИАТ','СПЕЦИАЛИТЕТ','КОЛЛЕДЖ','МАГИСТРАТУРА'];
@@ -207,6 +227,35 @@ section.adv
         button.show_all Показать все
 
 
+section.about
+    .container
+        .d_flex
+            .left_col
+                .section_title.m_title О компании
+                picture
+                    img.about_logo(src=dir+'about_logo.png')
+                    img.about_img(src=dir+'about_photo.png')
+            .right_col
+                .section_title О компании
+                .about_sub_title Мы являемся официальными партнёрами следующих ВУЗов:
+                .partners_list
+                    -for(var i=1;i<=5;i++)
+                        .item
+                            picture
+                                img(src=dir+"partners/"+i+".png")
+                .about_txt Мы проводим работу по профессиональной ориентации жителей Республики Беларусь по выбору специальности, возможности поступления и обучения в ВУЗах–партнёрах. Наши услуги осуществляются на бесплатной основе для всех обратившихся
+
+        .steps
+            .title Схема работы:
+            .steps_list
+                .item
+                    .txt Оставьте заявку для связи
+                .item
+                    .txt Получите консультацию от специалиста
+                .item
+                    .txt Приезжайте в офис и оформляйте документы <span>(для ММУ можно выбрать и полностью   дистанционный порядок оформления документов)</span>
+
+
 -var n_serv=['не хотите проходить сложные вступительные процедуры?','не удалось пройти по конкурсу в выбранный вами вуз?','хотите поступить уже сегодня, не дожидаясь 1 сентября?','хотите получать 2 высших образования одновременно?','закончили колледж, училище, техникум?','закончили школу, лицей, гимназию?','уже есть высшее образование, но хотите поменять специальность?','Вы выпускник прошлых лет и не хотите тратить много времени на подготовку к ЦТ?']
 section.need_serv
     .container
@@ -217,6 +266,47 @@ section.need_serv
                     .item_content
                         .counter=index+1
                         .desc=n_item
+
+
+section.question_form.bg_grey
+    .container
+        .d_flex
+            .left_col
+                .title Есть вопросы? Задавайте!
+                p Хотите получить <span class="text_uppercase">бесплатную консультацию</span> и совет специалиста?
+                p Заполните форму, и мы свяжемся с Вами в ближайшее время
+                .text_right
+                    img(src=dir+"union6.png")
+
+            .right_col
+                .title Заполните форму, и мы свяжемся с Вами в ближайшее время
+                form
+                    .form_row
+                        .field.w_50
+                            label Ваше имя
+                            input.form_control(type="text" placeholder="Иванов Иван Иванович")
+                        .field.w_50
+                            label Телефон
+                            input.form_control(type="text" placeholder="+375 (__) ___ __ __")
+                        .field.w_50
+                            label E-mail
+                            input.form_control(type="text" placeholder="ivanovivan@mail.ru")
+                        .field.w_50
+                            label
+                            input.form_control(type="file")
+                        .field.m_hide
+                            label Сообщение
+                            textarea.form_control(placeholder="Введите ваш вопрос")
+                        .b_row
+                            .field.w_50
+                                .checkbox
+                                    input(type="checkbox" id="aggree3" checked)
+                                    label(for="aggree3") Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
+                            .field.w_50
+                                button.btn_default(type="submit") Оставить заявку
+
+
+
 
 
 section.contacts

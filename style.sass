@@ -848,16 +848,193 @@ nav
 
 
 
+.m_form_block
+  padding: 0
+  position: relative
+  z-index: 2
+  &:before
+    +b_a
+    top: 116px
+    left: 0
+    bottom: 0
+    width: 100%
+    background: #F2F2F2
 
+
+  .form_block
+    margin-top: -116px
+    max-width: 100%
+    position: relative
+    z-index: 3
+
+  @media (min-width: 992px)
+    display: none
 
 
 .first_screen
+  padding: 0
+  overflow: hidden
   .d_flex
     position: relative
     //+wrap
+    +j-beetween
+    padding: 40px 0
+    @media (max-width: 991px)
+      padding-bottom: 290px
+
     .girl
       position: absolute
       //opacity: 0
+      bottom: 0
+      right: 345px
+      max-height: 100%
+      @media (max-width: 1420px)
+        right: 300px
+
+      @media (max-width: 991px)
+        right: 0
+      @media (max-width: 600px)
+        right: initial
+        left: 100px
+
+
+    .text_block
+      position: relative
+      z-index: 2
+      h1, .h1
+        font-size: 58px
+        line-height: 71px
+        font-family: $g_600
+        margin-bottom: 65px
+        margin-top: 90px
+        @media (max-width: 1420px)
+          font-size: 45px
+          line-height: 1.2
+        @media (max-width: 991px)
+          margin-top: 0
+          font-size: 31px
+          line-height: 38px
+          margin-bottom: 40px
+      .sub_title
+        font-size: 20px
+        line-height: 27px
+        font-family: $open_sans
+        @media (min-width: 1421px)
+          max-width: 500px
+        @media (max-width: 991px)
+          max-width: 180px
+          font-size: 16px
+          line-height: 22px
+        span
+          color: $gold
+          font-weight: bold
+    .form_block
+      @media (max-width: 991px)
+        display: none
+
+.form_block
+  background: #fff
+  width: 100%
+  max-width: 460px
+  padding: 45px
+  @media (max-width: 1420px)
+    max-width: 400px
+    padding: 30px
+  .form_block_title
+    font-size: 20px
+    line-height: 24px
+    text-align: center
+    font-family: $g_500
+    margin-bottom: 40px
+    @media (max-width: 991px)
+      font-size: 16px
+      line-height: 19px
+
+
+
+.field
+  margin-bottom: 25px
+  @media (max-width: 991px)
+    margin-bottom: 17px
+  &:last-of-type
+    margin-bottom: 0
+.form_control
+  background: #F7F7F7
+  border: 1px solid #E8E8E8
+  width: 100%
+  height: 60px
+  padding-left: 20px
+  color: $black
+  font-size: 16px
+  @media (max-width: 991px)
+    height: 56px
+  &::-webkit-input-placeholder
+    color: #6C6C6C
+    font-size: 16px
+    font-family: $open_sans
+  &::-moz-placeholder
+    color: #6C6C6C
+    font-size: 16px
+    font-family: $open_sans
+  &::-ms-input-placeholder
+    color: #6C6C6C
+    font-size: 16px
+    font-family: $open_sans
+  &:-moz-placeholder
+    color: #6C6C6C
+    font-size: 16px
+    font-family: $open_sans
+  &:-ms-input-placeholder
+    color: #6C6C6C
+    font-size: 16px
+    font-family: $open_sans
+
+form
+  .btn_default
+    max-width: 100%
+    height: 60px
+    @media (max-width: 991px)
+      height: 56px
+
+.checkbox
+  position: relative
+  input
+    position: absolute
+    opacity: 0
+    &:checked
+      + label
+        &:before
+          opacity: 0
+        &:after
+          opacity: 1
+    + label
+      color: #6C6C6C
+      font-size: 12px
+      position: relative
+      line-height: 14px
+      font-family: $open_sans
+      display: inline-block
+      padding-left: 40px
+      cursor: pointer
+      &:before
+        +b_a
+        left: 0
+        top: 0
+        width: 18px
+        height: 18px
+        background: $black
+        +border-radius(3px)
+
+
+      &:after
+        +b_a
+        left: 0
+        top: 0
+        width: 18px
+        height: 18px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M16 0H2C0.89 0 0 0.9 0 2V16C0 17.1 0.89 18 2 18H16C17.11 18 18 17.1 18 16V2C18 0.9 17.11 0 16 0ZM7 14L2 9L3.41 7.59L7 11.17L14.59 3.58L16 5L7 14Z' fill='%23323232'/%3e%3c/svg%3e ")
+        opacity: 0
+
 
 
 section
@@ -1869,3 +2046,343 @@ footer
 
 
 
+.about
+  background: linear-gradient(180deg, #FCDB9E -15%, #FAD99D 11.69%, #E8C38C 57.27%, #DDB887 92.69%, #D7B183 100.71%)
+  position: relative
+  &:before
+    +b_a
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(198.45deg, rgba(255, 255, 255, 0) 8.04%, rgba(255, 255, 255, 0.698593) 37.28%, #FFFFFF 59.39%, #FFFFFF 94.05%)
+    transform: rotate(-180deg)
+
+  .container
+    position: relative
+    z-index: 1
+
+  .d_flex
+    +wrap
+    margin-bottom: 90px
+    @media (max-width: 1200px)
+      margin-bottom: 45px
+    .left_col
+      text-align: center
+      width: 50%
+      @media (max-width: 1200px)
+        width: 100%
+        margin-bottom: 60px
+      picture
+        display: inline-block
+        position: relative
+        .about_logo
+          position: absolute
+          left: -85px
+          bottom: 100px
+          @media (max-width: 1200px)
+            left: initial
+            right: 16px
+            bottom: -25px
+            max-width: 140px
+    .right_col
+      width: 50%
+      max-width: 580px
+      @media (max-width: 1200px)
+        width: 100%
+        max-width: 100%
+      .section_title
+        @media (max-width: 1200px)
+          display: none
+      .about_sub_title
+        font-size: 24px
+        line-height: 29px
+        font-family: $g_600
+        max-width: 580px
+        margin-bottom: 60px
+        @media (max-width: 1200px)
+          margin-bottom: 30px
+      .about_txt
+        font-size: 18px
+        line-height: 25px
+        font-family: $open_sans
+        @media (max-width: 1200px)
+          font-size: 16px
+          line-height: 22px
+
+      .partners_list
+        +flex
+        +wrap
+        margin-bottom: 60px
+        @media (max-width: 1200px)
+          margin-bottom: 30px
+        .item
+          width: 33.33%
+          padding: 40px
+          border-bottom: 1px solid  #C4C4C4
+          @media (max-width: 1200px)
+            padding: 20px
+            width: 50%
+          + .item
+            border-left: 1px solid  #C4C4C4
+          &:nth-child(4), &:nth-child(5)
+            border-bottom: 0
+          &:nth-child(3)
+            border-left: 0
+          &:nth-child(4)
+            @media (min-width: 1201px)
+              border-left: 0
+            @media (max-width: 1200px)
+              border-bottom: 1px solid  #C4C4C4
+          &:nth-child(5)
+            //@media (min-width: 1201px)
+            border-right: 1px solid  #C4C4C4
+            @media (max-width: 1200px)
+              border-left: 0
+
+.m_title
+  @media (min-width: 1201px)
+    display: none
+
+.steps
+  max-width: 1180px
+  width: 100%
+  margin: auto
+  .title
+    font-size: 24px
+    font-family: $g_600
+    margin-bottom: 60px
+    @media (max-width: 1200px)
+      margin-bottom: 30px
+  .steps_list
+    counter-reset: list
+    width: 100%
+    +flex
+    @media (max-width: 1200px)
+      +wrap
+    .item
+      font-size: 18px
+      line-height: 25px
+      font-family: $open_sans
+      font-weight: 600
+      display: inline-block
+      position: relative
+      padding-left: 20px
+      counter-increment: list
+      @media (max-width: 1200px)
+        font-size: 16px
+        margin-bottom: 20px
+        padding-right: 50px
+      &:before
+        content: counter(list) "."
+        position: absolute
+        left: 0
+        top: 0
+      span
+        font-weight: 400
+      &:nth-child(1)
+        min-width: 270px
+        margin-right: 200px
+        @media (max-width: 1420px)
+          margin-right: 100px
+        @media (max-width: 1200px)
+          width: 100%
+          margin-right: 0
+        &:after
+          +b_a
+          background: url(./img/union2.png)
+          width: 249px
+          height: 131px
+          left: 163px
+          bottom: 10px
+          @media (max-width: 1420px)
+            top: 10px
+            bottom: initial
+            left: initial
+            right: -50px
+          @media (max-width: 1200px)
+            background: url(./img/union4.png)
+            width: 24px
+            height: 87px
+            top: -32px
+            left: 250px
+            right: initial
+      &:nth-child(2)
+        min-width: 245px
+        margin-right: 118px
+        @media (max-width: 1420px)
+          margin-right: 80px
+        @media (max-width: 1200px)
+          width: 100%
+          margin-right: 0
+        &:after
+          +b_a
+          background: url(./img/union3.png)
+          width: 171px
+          height: 44px
+          left: 140px
+          bottom: 10px
+          @media (max-width: 1420px)
+            bottom: -20px
+            left: 100px
+          @media (max-width: 1200px)
+            background: url(./img/union5.png)
+            width: 56px
+            height: 74px
+            left: 250px
+            bottom: -62px
+      &:nth-child(3)
+        min-width: 340px
+        @media (max-width: 1200px)
+          width: 100%
+          min-width: initial
+
+.text_right
+  text-align: right
+  img
+    display: inline-block
+.question_form
+  .d_flex
+    +wrap
+    .left_col
+      background: linear-gradient(161.28deg, #D82F2F -85.86%, #323232 56.34%, #323232 134.62%)
+      width: 41%
+      color: #fff
+      padding: 95px 78px
+      @media (max-width: 1420px)
+        padding: 60px 50px
+      @media (max-width: 991px)
+        width: 100%
+        padding: 40px 15px
+        text-align: center !important
+        .text_right
+          text-align: center
+          padding-top: 0
+      .title
+        font-family: $g_500
+        font-size: 46px
+        line-height: 56px
+        max-width: 340px
+        margin: auto auto 60px
+        @media (max-width: 991px)
+          font-size: 31px
+          line-height: 38px
+          margin-bottom: 35px
+      p
+        font-size: 19px
+        line-height: 26px
+        max-width: 340px
+        margin: auto auto 30px
+        @media (max-width: 1200px)
+          font-size: 16px
+          line-height: 22px
+        @media (max-width: 991px)
+          margin-bottom: 20px
+          &:last-of-type
+            margin-bottom: 0
+        span, a
+          color: $gold
+
+      .text_right
+        padding-top: 30px
+
+
+
+
+    .right_col
+      width: 59%
+      background: #fff
+      padding: 95px 120px
+      @media (max-width: 1420px)
+        padding: 60px
+      @media (max-width: 991px)
+        width: 100%
+        padding: 40px 15px
+      .title
+        font-size: 16px
+        line-height: 19px
+        text-align: center
+        font-family: $g_600
+        margin-bottom: 30px
+        @media (min-width: 992px)
+          display: none
+      .form_row
+        margin: 0 -20px
+        +flex
+        +wrap
+        @media (max-width: 991px)
+          margin: 0
+        .m_hide
+          @media (max-width: 991px)
+            display: none
+
+        .field
+          padding: 0 20px
+          width: 100%
+          @media (max-width: 991px)
+            padding: 0
+          label
+            margin-bottom: 5px
+            min-height: 24px
+
+          &.w_50
+            width: 50%
+            @media (max-width: 991px)
+              width: 100%
+
+          .form_control
+            background: #fff
+            @media (max-width: 991px)
+              font-size: 14px
+            &::-webkit-input-placeholder
+              color: #B0B0B0
+              @media (max-width: 991px)
+                font-size: 14px
+            &::-moz-placeholder
+              color: #B0B0B0
+              @media (max-width: 991px)
+                font-size: 14px
+            &::-ms-input-placeholder
+              color: #B0B0B0
+              @media (max-width: 991px)
+                font-size: 14px
+            &:-moz-placeholder
+              color: #B0B0B0
+              @media (max-width: 991px)
+                font-size: 14px
+            &:-ms-input-placeholder
+              color: #B0B0B0
+              @media (max-width: 991px)
+                font-size: 14px
+
+        .b_row
+          +flex
+          +wrap
+          .field
+            &:nth-child(1)
+              @media (min-width: 992px)
+                order: 2
+            &:nth-child(2)
+              @media (min-width: 992px)
+                order: 1
+
+        .btn_default
+          +box-shadow(0 25px 47px -18px rgba(255, 61, 61, 0.35))
+
+
+
+
+
+form
+  label
+    color: #6C6C6C
+    font-size: 16px
+    font-family: $open_sans
+    padding-left: 18px
+    display: block
+
+
+
+textarea.form_control
+  height: 160px
+  padding-top: 25px
