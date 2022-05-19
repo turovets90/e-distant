@@ -365,7 +365,7 @@ get_header();
                 </ul>
             </div>
             <div class="right_col">
-                <div class="map"><img src="<?php echo get_template_directory_uri();?>/img/image87.png"/></div>
+                <div class="map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9db553df83ff1aa60457de6c87fd1a0158c99fb9353d027cbd6d4e2e492b4840&amp;width=100%25&amp;height=440&amp;lang=ru_RU&amp;scroll=true"></script></div>
             </div>
         </div>
     </div>
