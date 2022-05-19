@@ -20,28 +20,7 @@ get_header();
     <div class="container">
         <div class="form_block">
             <div class="form_block_title">Заполните форму, и мы свяжемся с Вами в ближайшее время</div>
-            <form>
-                <div class="c_form">
-                    <div class="field">
-                        <input class="form_control" type="text" placeholder="Ваше имя"/>
-                    </div>
-                    <div class="field">
-                        <input class="form_control" type="text" placeholder="Телефон"/>
-                    </div>
-                    <div class="field">
-                        <input class="form_control" type="text" placeholder="E-mail"/>
-                    </div>
-                    <div class="field">
-                        <div class="checkbox">
-                            <input type="checkbox" id="aggree1" checked="checked"/>
-                            <label for="aggree1">Отправляя заявку, вы даёте согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <button class="btn_default" type="submit">Оставить заявку</button>
-                    </div>
-                </div>
-            </form>
+            <?php echo do_shortcode('[contact-form-7 id="146" title="Контактная форма 1"]');?>
         </div>
     </div>
 </section>
