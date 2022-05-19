@@ -1,5 +1,7 @@
 -var main_menu=['Специальности','Цены','Акции','Сроки обучения','Преимущества','О компании','Контакты'];
 
+-var main_menu_anchor=['specialty','prices','stock','terms_of_study','advantages','about_company','contacts'];
+
 header
     .container
         .h_row
@@ -25,7 +27,7 @@ header
                 ul.menu
                     for m_item, index in main_menu
                         li(class=(index===2)?'sale':'')
-                            a(href="#")=m_item
+                            a(href="#"+main_menu_anchor[index])=m_item
 
                 .h_right
 
@@ -85,7 +87,7 @@ header
                 ul.menu
                     for m_item, index in main_menu
                         li(class=(index===2)?'sale':'')
-                            a(href="#")=m_item
+                            a(href="#"+main_menu_anchor[index])=m_item
                 a.btn_default(href="#") Задать вопрос
 
 

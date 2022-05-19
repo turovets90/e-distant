@@ -10,7 +10,7 @@ footer
                 ul.menu
                     for m_item, index in main_menu
                         li(class=(index === 2) ? 'sale' : '')
-                            a(href="#")=m_item
+                            a(href="#"+main_menu_anchor[index])=m_item
 
             .right_col
                 ul.phones
