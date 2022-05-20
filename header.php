@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/style.css?<?php echo date('H:i:s');?>"/>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="body">
 <?php wp_body_open(); ?>
 <header>
     <div class="container">

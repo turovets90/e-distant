@@ -122,6 +122,8 @@
 
 <a href="#modal" class="btn_fixed modal_toggle">задать вопрос</a>
 
+<a href="#body" class="scroll_top"></a>
+
 <?php wp_footer(); ?>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

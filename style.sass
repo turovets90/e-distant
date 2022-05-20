@@ -893,8 +893,10 @@ nav
         right: 300px
 
       @media (max-width: 991px)
-        right: 0
-      @media (max-width: 600px)
+        right: -150px
+      @media (max-width: 767px)
+
+      @media (max-width: 523px)
         right: initial
         left: 100px
 
@@ -1440,10 +1442,11 @@ section
       @media (max-width: 1200px)
         width: 100%
         margin-right: 0
-        margin-bottom: 20px
+        margin-bottom: 100px
         padding: 30px
       @media (max-width: 991px)
         padding: 35px 15px
+        margin-bottom: 70px
       strong, b
         display: block
         color: #DBA342
@@ -1507,14 +1510,27 @@ section
         padding: 30px
       @media (max-width: 991px)
         padding: 35px 15px
-      .union
+      &:before
+        +b_a
+        right: -2px
+        top: -2px
+        width: 65px
+        height: 65px
+        background: #fff
+        @media (max-width: 991px)
+          height: 33px
 
+      .union
         position: absolute
-        right: -30px
-        top: -20px
+        right: -1px
+        top: -72px
         z-index: 2
-        @media (max-width: 1430px)
-          display: none
+        max-width: initial
+        margin: 0
+        @media (max-width: 991px)
+          max-width: 136px
+          top: -36px
+
       .suggestions_row
         +flex
         +wrap
@@ -1737,7 +1753,7 @@ section
       max-width: 840px
       @media (max-width: 991px)
         max-width: 100%
-        margin: 0 -10px
+        //margin: 0 -10px
 
 .c_list
   li
@@ -2418,6 +2434,9 @@ textarea.form_control
     top: 32px
     &.fixed
       top: 0
+      @media (max-width: 991px)
+        .main_menu
+          top: 81px
     @media (max-width: 782px)
       top: 46px
       &.fixed
@@ -2617,6 +2636,7 @@ textarea.form_control
   position: fixed
   top: 40%
   right: 0
+  z-index: 99
   @media (max-width: 991px)
     display: none
   ul
@@ -2668,3 +2688,29 @@ textarea.form_control
 
 html, body
   overflow-x: hidden
+
+
+
+.scroll_top
+  position: fixed
+  right: 5%
+  bottom: 30px
+  +border-radius(50%)
+  background: $red
+  width: 75px
+  height: 75px
+  border: 1px solid #FFFFFF
+  +box-shadow(0 20px 35px rgba(255, 61, 61, 0.35))
+  z-index: 99
+  display: none
+  @media (max-width: 991px)
+    width: 60px
+    height: 60px
+    right: 20px
+    bottom: 20px
+  &:before
+    +b_a
+    +m_a
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='27' height='15' viewBox='0 0 27 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 13L13.5 2L26 13' stroke='white' stroke-width='3'/%3e%3c/svg%3e ")
+    width: 27px
+    height: 15px

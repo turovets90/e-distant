@@ -138,7 +138,13 @@ $(document).ready(function(){
 
     $(".phone").mask("+375 (99) 999-99-99");
 
-
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 200) {
+            $('.scroll_top').fadeIn();
+        } else {
+            $('.scroll_top').fadeOut();
+        }
+    });
 
 });
 
